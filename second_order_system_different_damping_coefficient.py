@@ -16,7 +16,7 @@ ts = np.arange(0, 20, dt)
 plt.figure()
 ax = plt.subplot()
 ax.set_title(r"Step reponse of $\omega^2/(s^2+2 \zeta \omega s+\omega^2)$ with $\omega =$ {}, but different $\zeta$".format(omega))
-plt.text(4.5, 1.5, '$\zeta=0$, oscillation.\n$0<\zeta<1$, underdamped.\n$\zeta=1$, critially dampped.\n$\zeta>1$, overdamped.\n', fontdict=font, wrap=True)
+plt.text(4.5, 1.5, '$\zeta=0$, oscillation.\n$0<\zeta<1$, underdamped.\n$\zeta=1$, critially damped.\n$\zeta>1$, overdamped.\n', fontdict=font, wrap=True)
 
 for zeta in zetas:
     den = [1, omega* 2*zeta, omega**2]
@@ -27,7 +27,7 @@ for zeta in zetas:
 
 
 ts = np.arange(0, 10, dt)
-zeta=1 # critial dampped
+zeta=1 # critial damped
 den = [1, omega* 2*zeta, omega**2]
 system = lti(num, den)
 response_t, response = system.step(X0=0, T=ts)
@@ -35,7 +35,7 @@ y=1-np.exp(-omega*ts)-omega*ts*np.exp(-omega*ts)
 
 plt.figure()
 ax = plt.subplot(3,1,1)
-ax.set_title(r"Second order sytem $\omega^2/(s^2+2 \omega s+\omega^2)$ with $\omega =$ {}, critically dampped case".format(omega))
+ax.set_title(r"Second order sytem $\omega^2/(s^2+2 \omega s+\omega^2)$ with $\omega =$ {}, critically damped case".format(omega))
 ax.plot(ts, y, label="$1-\exp(-\omega t)-\omega t \exp(-\omega t)$, time domain step response")
 # ax.plot(response_t, response, label="ground truth zeta {}".format(zeta))
 ax.legend()
